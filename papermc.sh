@@ -27,8 +27,6 @@ then
   # Download new server jar
   wget ${URL} -O ${JAR_NAME}
 
-  chown papermc:papermc ${JAR_NAME}
-
   # If this is the first run, accept the EULA
   if [ ! -e eula.txt ]
   then
