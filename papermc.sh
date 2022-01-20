@@ -43,7 +43,7 @@ then
   JAVA_OPTS="-Xms${MC_RAM} -Xmx${MC_RAM} ${JAVA_OPTS}"
 fi
 
-chmod +rwx /papermc
+chown papermc:papermc /papermc
 
 # Start server
 sudo -u papermc /usr/local/openjdk-17/bin/java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui
