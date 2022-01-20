@@ -14,14 +14,15 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir /papermc
 
-RUN groupadd -g 999 papermc && \
-    useradd -r -u 000 -g papermc papermc
-USER papermc
+RUN groupadd -g 6969 papermc && \
+    useradd -r -u 6969 -g papermc papermc
 
 # Start script
-CMD ["sh", "./papermc.sh"]
+CMD ["sh", "/papermc.sh"]
 
 # Container setup
 EXPOSE 25565/tcp
 EXPOSE 25565/udp
 VOLUME /papermc
+
+USER papermc
