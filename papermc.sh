@@ -1,7 +1,5 @@
 #!/bin/bash
 
-chown papermc:papermc /papermc/*
-
 # Enter server directory
 cd papermc
 
@@ -35,7 +33,7 @@ then
   if [ ! -e eula.txt ]
   then
     # Run the server once to generate eula.txt
-    sudo -u papermc /usr/local/openjdk-17/bin/java -jar ${JAR_NAME}
+    exec java -jar ${JAR_NAME}
     # Edit eula.txt to accept the EULA
     sed -i 's/false/true/g' eula.txt
   fi
@@ -47,7 +45,5 @@ then
   JAVA_OPTS="-Xms${MC_RAM} -Xmx${MC_RAM} ${JAVA_OPTS}"
 fi
 
-
-
 # Start server
-sudo -u papermc /usr/local/openjdk-17/bin/java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui
+exec java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui
