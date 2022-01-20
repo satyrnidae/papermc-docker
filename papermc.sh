@@ -27,11 +27,13 @@ then
   # Download new server jar
   wget ${URL} -O ${JAR_NAME}
 
+  chown papermc:papermc ${JAR_NAME}
+
   # If this is the first run, accept the EULA
   if [ ! -e eula.txt ]
   then
     # Run the server once to generate eula.txt
-    java -jar ${JAR_NAME}
+    sudo -u papermc /usr/local/openjdk-17/bin/java -jar ${JAR_NAME}
     # Edit eula.txt to accept the EULA
     sed -i 's/false/true/g' eula.txt
   fi
