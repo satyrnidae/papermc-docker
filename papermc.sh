@@ -44,4 +44,4 @@ then
 fi
 
 # Start server
-sudo su -c "exec java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui" papermc
+sudo -u papermc /usr/local/openjdk-17/bin/java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui
