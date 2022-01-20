@@ -14,6 +14,10 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir /papermc
 
+RUN groupadd -g 999 papermc && \
+    useradd -r -u 000 -g papermc papermc
+USER papermc
+
 # Start script
 CMD ["sh", "./papermc.sh"]
 
