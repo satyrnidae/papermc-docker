@@ -44,4 +44,4 @@ then
 fi
 
 # Start server
-sudo -u papermc exec java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui
+exec sudo -u papermc java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui
