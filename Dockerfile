@@ -24,5 +24,3 @@ CMD ["sh", "/papermc.sh"]
 EXPOSE 25565/tcp
 EXPOSE 25565/udp
 VOLUME /papermc
-
-USER papermc

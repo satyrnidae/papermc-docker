@@ -26,7 +26,7 @@ then
   rm -f *.jar
   # Download new server jar
   wget ${URL} -O ${JAR_NAME}
-  
+
   # If this is the first run, accept the EULA
   if [ ! -e eula.txt ]
   then
@@ -44,4 +44,4 @@ then
 fi
 
 # Start server
-exec java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui
+sudo -u papermc exec java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui
