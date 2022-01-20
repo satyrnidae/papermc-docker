@@ -1,5 +1,7 @@
 #!/bin/bash
 
+chown papermc:papermc /papermc/*
+
 # Enter server directory
 cd papermc
 
@@ -45,7 +47,7 @@ then
   JAVA_OPTS="-Xms${MC_RAM} -Xmx${MC_RAM} ${JAVA_OPTS}"
 fi
 
-chown papermc:papermc /papermc
+
 
 # Start server
 sudo -u papermc /usr/local/openjdk-17/bin/java -server ${JAVA_OPTS} -jar ${JAR_NAME} nogui
